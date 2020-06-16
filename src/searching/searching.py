@@ -32,3 +32,27 @@ def binary_search(arr, target):
             low = mid + 1
 
     return -1  # not found
+
+# binary search on array 
+# half it and search position of target
+# based on midpoint 
+
+def binary_search(arr, target): 
+    """
+    args: array, target value
+    returns: last array term if not found
+    """
+
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) //2
+
+        if arr[mid] == target:
+            return mid
+        elif target < arr[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return -1 #not found 
